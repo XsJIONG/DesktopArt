@@ -14,7 +14,7 @@ int main() {
 	int W=GetSystemMetrics(SM_CXFULLSCREEN);
 	int H=GetSystemMetrics(SM_CYFULLSCREEN);
 	while (true) {
-		for( int i = 0; i < Nm;i++) {
+		for(int i=0;i<Nm;i++) {
 			int x = ox + R*cos((i*s+ox)*3.1415926/180);
 			int y = oy + R*sin((i*s+oy)*3.1415926/180);
 			::SendMessage(hwndSysListView32, LVM_SETITEMPOSITION, i, MAKELPARAM(x,y));
