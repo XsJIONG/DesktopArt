@@ -2,7 +2,7 @@
 #include <commctrl.h>
 #include <cmath>
 
-const int R=100;
+const int R=300;
 int main() {
 	HWND hwndParent=::FindWindow("Progman", "Program Manager");
 	HWND hwndSHELLDLL_DefView=::FindWindowEx(hwndParent, NULL, "SHELLDLL_DefView", NULL);
@@ -30,7 +30,7 @@ int main() {
 			oy-=yy;
 			yy=-yy;
 		}
-		Sleep(30);
+		Sleep(10);
 	}
 	return 0;
 }
