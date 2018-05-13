@@ -3,6 +3,7 @@
 #include <cmath>
 #include <iostream>
 #include <pthread.h>
+#include <time.h>
 #include <conio.h>
 #define KEY_DOWN(VK_NONAME) ((GetAsyncKeyState(VK_NONAME) & 0x8000) ? 1:0)
 using namespace std;
@@ -90,7 +91,7 @@ int main() {
 			if (cur->x+size>W||cur->y+size>H||cur->x<0||cur->y<0) cur->x-=BIG*cur->v/2000*GX,cur->y-=BIG*cur->v/2000*GY,cur->v=-cur->v*JUMP;
 			::SendMessage(hwndSysListView32, LVM_SETITEMPOSITION, i, MAKELPARAM(cur->x,cur->y));
 		}
-		ListView_RedrawItems(hwndSysListView32, 0, ListView_GetItemCount(hwndSysListView32) - 1);
+		ListView_RedrawItems(hwndSysListView32, 0, Nm - 1);
 		::UpdateWindow(hwndSysListView32);
 		Sleep(UP);
 		AL+=UP;

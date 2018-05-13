@@ -4,6 +4,7 @@
 #include <pthread.h>
 #include <iostream>
 #include <stdio.h>
+#include <time.h>
 #include <stdlib.h>
 #define KEY_DOWN(VK_NONAME) ((GetAsyncKeyState(VK_NONAME) & 0x8000) ? 1:0)
 using namespace std;
@@ -90,7 +91,7 @@ int main() {
 				::SendMessage(hwndSysListView32, LVM_SETITEMPOSITION, i, MAKELPARAM(tx,(i-1)*s+2*K));
 			for (int i=0;i<GS;i++)
 				::SendMessage(hwndSysListView32, LVM_SETITEMPOSITION, i, MAKELPARAM(ox,oy));
-			ListView_RedrawItems(hwndSysListView32, 0, ListView_GetItemCount(hwndSysListView32) - 1);
+			ListView_RedrawItems(hwndSysListView32, 0, Nm - 1);
 			::UpdateWindow(hwndSysListView32);
 			Sleep(UP);
 			if (abs(ox,tx)<size&&(oy<=s*center||oy>=s*center+2*K-size)) {

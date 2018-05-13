@@ -2,7 +2,7 @@
 #include <commctrl.h>
 #include <cmath>
 
-const int R=300;
+const int R=100;
 int main() {
 	HWND hwndParent=::FindWindow("Progman", "Program Manager");
 	HWND hwndSHELLDLL_DefView=::FindWindowEx(hwndParent, NULL, "SHELLDLL_DefView", NULL);
@@ -19,7 +19,7 @@ int main() {
 			int y = oy + R*sin((i*s+oy)*3.1415926/180);
 			::SendMessage(hwndSysListView32, LVM_SETITEMPOSITION, i, MAKELPARAM(x,y));
 		}
-		ListView_RedrawItems(hwndSysListView32, 0, ListView_GetItemCount(hwndSysListView32) - 1);
+		ListView_RedrawItems(hwndSysListView32, 0, Nm - 1);
 		::UpdateWindow(hwndSysListView32);
 		ox+=xx, oy+=yy;
 		if (ox+R>W||ox<R) {

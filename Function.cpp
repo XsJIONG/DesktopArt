@@ -22,7 +22,7 @@ int main() {
 			y = H-sin(rx)*50;
 			::SendMessage(hwndSysListView32, LVM_SETITEMPOSITION, (i+of)%Nm, MAKELPARAM(x,y));
 		}
-		ListView_RedrawItems(hwndSysListView32, 0, ListView_GetItemCount(hwndSysListView32) - 1);
+		ListView_RedrawItems(hwndSysListView32, 0, Nm - 1);
 		::UpdateWindow(hwndSysListView32);
 		ox+=1;
 		//of++;
