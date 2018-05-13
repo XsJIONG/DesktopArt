@@ -11,7 +11,7 @@ const double g=9.8;
 const double JUMP=2.0/3.0;
 const int UP=10;
 const int size=50;
-const int BIG=5000;
+const int BIG=9000;
 int abs(int a, int b) {
 	return a>b?a-b:b-a;
 }
